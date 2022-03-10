@@ -22,5 +22,19 @@ namespace ContextMenu.Helpers
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern IntPtr GetProp(IntPtr hWnd, string lpString);
+
+        [DllImport("user32.dll", SetLastError = true, ExactSpelling = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool GetCurrentInputMessageSource(ref INPUT_MESSAGE_SOURCE inputMessageSource);
+
+        [DllImport("user32.dll", SetLastError = false)]
+        internal static extern IntPtr GetMessageExtraInfo();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool SetProp(IntPtr hWnd, string lpString, IntPtr hData);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool SystemParametersInfo(SPI uiAction, uint uiParam, ref bool pvParam, uint fWinIni);
     }
 }
