@@ -1,6 +1,6 @@
 ﻿namespace ContextMenu.Models
 {
-	enum ScaleType
+	public enum ScaleType
 	{
 		DPI,
 		PPI

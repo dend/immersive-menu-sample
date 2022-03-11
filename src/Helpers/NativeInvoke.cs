@@ -36,5 +36,8 @@ namespace ContextMenu.Helpers
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool SystemParametersInfo(SPI uiAction, uint uiParam, ref bool pvParam, uint fWinIni);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        internal static extern bool GetMenuItemInfo(IntPtr hMenu, UInt32 uItem, bool fByPosition, [In, Out] MENUITEMINFO lpmii);
     }
 }

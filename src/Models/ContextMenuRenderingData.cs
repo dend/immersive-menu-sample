@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace ContextMenu.Models
 {
-	struct ContextMenuRenderingData
+	public struct ContextMenuRenderingData
 	{
-		string text;
-		uint menuFlags;
-		IntPtr hbmpItem;
+		public string text;
+		public uint menuFlags;
+		public IntPtr hbmpItem;
 		/*HBITMAP hbmpChecked;
 		HBITMAP hbmpUnchecked;*/
-		ContextMenuPaddingType cmpt;
-		ScaleType scaleType;
-		uint dpi;
-		bool useDarkTheme;
-		bool useSystemPadding;
-		bool forceAccelerators;
-		IntPtr parentArray;
+		public ContextMenuPaddingType cmpt;
+		public ScaleType scaleType;
+		public uint dpi;
+		public bool useDarkTheme;
+		public bool useSystemPadding;
+		public bool forceAccelerators;
+		public IntPtr parentArray;
 	};
 }

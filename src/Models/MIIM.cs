@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ContextMenu.Models
 {
     [Flags]
-    enum MIIM
+    public enum MIIM
     {
         BITMAP = 0x00000080,
         CHECKMARKS = 0x00000008,

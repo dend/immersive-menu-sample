@@ -11,7 +11,7 @@ namespace ContextMenu.Models
     public struct MENUITEMINFO
     {
         public uint cbSize;
-        public uint fMask;
+        public MIIM fMask;
         public MFT fType;
         public uint fState;
         public uint wID;
