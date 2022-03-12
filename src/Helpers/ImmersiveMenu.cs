@@ -155,22 +155,24 @@ namespace ContextMenu.Helpers
             return NativeInvoke.GetProp(hWnd, propName));
         }
 
-        HRESULT _GetRenderingDataForMenuItem(ScaleType type, MENUITEMINFO mii, string itemText, POINT point, List<ContextMenuRenderingData> cmrdArray, ContextMenuRenderingData? parentCmrd, ImmersiveContextMenuOptions icmoFlags, ref ContextMenuRenderingData cmrd)
+        HRESULT _GetRenderingDataForMenuItem(ScaleType type, MENUITEMINFO mii, string itemText, POINT point, List<ContextMenuRenderingData> cmrdArray, ContextMenuRenderingData parentCmrd, ImmersiveContextMenuOptions icmoFlags, ref ContextMenuRenderingData cmrd)
 	    {
 		    cmrd = new ContextMenuRenderingData();
-		    var renderData = new ContextMenuRenderingData();
+            ContextMenuRenderingData renderData = new ContextMenuRenderingData();
 
 			renderData.text = itemText;
 			renderData.hbmpItem = mii.hbmpItem;
-			//renderData->hbmpChecked = mii->hbmpChecked;
-			//renderData->hbmpUnchecked = mii->hbmpUnchecked;
+            //renderData->hbmpChecked = mii->hbmpChecked;
+            //renderData->hbmpUnchecked = mii->hbmpUnchecked;
 
-			if (parentCmrd != null)
+            if (parentCmrd != null)
+            {
                 renderData.dpi = parentCmrd.dpi;
-			else if (cmrdArray->empty())
-				renderData->dpi = _GetDpiForMonitorFromPoint(point);
-			else
-				renderData->dpi = cmrdArray->front()->dpi;
+            }
+            else if (cmrdArray->empty())
+                renderData->dpi = _GetDpiForMonitorFromPoint(point);
+            else
+                renderData->dpi = cmrdArray->front()->dpi;
 
 			if (WI_IsFlagSet(mii->fType, MFT_SEPARATOR))
 				renderData->menuFlags = MFT_SEPARATOR;

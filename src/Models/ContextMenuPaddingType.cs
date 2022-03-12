@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContextMenu.Models
 {
-	enum ContextMenuPaddingType
+	public enum ContextMenuPaddingType
 	{
 		CMPT_NONE = 0x0,
 		CMPT_TOP_PADDING = 0x1,
